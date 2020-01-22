@@ -3,8 +3,9 @@ import os
 from collections import defaultdict
 import pprint
 
-# directory of used CSS files 
-# input_dir= 
+# TODO:
+# input_dir= <replace with directory containing used CSS files>
+# output_dir= <replace with directory where you want to save cleaned.css>
 css_by_file=defaultdict() # dictionary containing {<url>: <used css>}
 
 files=os.listdir(input_dir)
@@ -70,5 +71,6 @@ for selectors, properties in cleanDict.items():
         cssFile+= ' '+ val[0]+';' # uses the first defined style, if multiple conflicting style definitions exist
     cssFile += '\n}'
 
-with open('layout_app/static/layout_app/css/opt/coverage/cleaned.css', 'w') as f:
+output_file=os.path.join(output_dir, 'cleaned.css')
+with open(output_file, 'w') as f:
     f.write(cssFile)
