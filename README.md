@@ -7,3 +7,6 @@ Remove unused CSS using Puppeteer to download coverage and Python for processing
     - scripts for parsing styles from multiple stylesheets into a nested dict 
     - easily find conflicting definitions
     - compile and save a clean.css file containing deduplicated styles
+
+
+** TODO: coverage does not yet support @keyframes, @media, @font... so deal with these separately 
